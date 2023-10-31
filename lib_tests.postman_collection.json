@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "b275430d-0330-4fea-a9f4-3613bde1954f",
+		"name": "lib_tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30189940"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": 1,\n\"name\": \"TwojeImie\",\n\"lastname\": \"TwojeNazwisko\",\n\"role\": {\n\"id\": 1,\n\"name\": \"Librarian\"\n},\n\"loans\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\": \"abc\",\n\"lastname\": \"bac\",\n\"password\": \"pass\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "librarian",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTYzMzg1MTUsInVzZXJuYW1lIjoiYWJjZCIsInJvbGUiOiJMaWJyYXJpYW4iLCJpc3MiOiJqYSJ9.FoHZH1wuFPjgGEowpy81Fsy5HW8CWGwLWwRTpzCQF5s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTYzMzEwNDgsInVzZXJuYW1lIjoiVHdvamVJbWllIiwicm9sZSI6IkxpYnJhcmlhbiJ9.OPLPodeeOqAVgpSQs53DTyfvULJ9mGEU2gSpFPNJB6s",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add role",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "reader",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTYzNTA5NzUsInVzZXJuYW1lIjoiYWJjZGVmZyIsInJvbGUiOiJSZWFkZXIiLCJpc3MiOiJqYSJ9.kVVzORg42ckPFbyBJEk89G27gv_-M9lpOoZeMrYxKak",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/api/reader",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reader"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
